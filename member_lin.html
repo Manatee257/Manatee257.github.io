@@ -21,6 +21,8 @@
 	<!-- Definity CSS -->
   	<link href="css/zerogrid.css" rel="stylesheet" media="all" type="text/css">
 	<link href="css/style.css" rel="stylesheet" media="all" type="text/css">
+	<link href="css/lin-style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 	<link href="css/menu.css" rel="stylesheet" media="all" type="text/css">
 	<!-- Lightbox -->
 	<link href="css/lightbox.css" rel="stylesheet" media="all" type="text/css">
@@ -121,35 +123,37 @@
 			</div>
 			<div id="about-us">
 				<article class="post-entry single-post">
-					<div class="wrap-post">
-						<div class="entry-header">
-							<h1 class="entry-title">这个页面就是自由发挥的页面</h1>
-						</div>
-						<div class="post-thumbnail-wrap">
-							<img src="images/single.jpg" />
-						</div>
-						<div class="entry-content">
-							<div class="excerpt"><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum exercitation ullamco laboris nisi ut aliquip.</p></div>
-							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-							<blockquote><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet vultatup duista.</p></blockquote>
-							<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril.</p>
-							<h2>Heading 1</h2>
-							<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse lorem ipsum dolor sit amet.</p>
-							<h2>Heading 2</h2>
-							<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. At vero eos et accusam et justo.</p>
-							<p><code>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</code></p>
-							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-							<div class="note">
-							  <ol>
-								<li>Lorem ipsum</li>
-								<li>Sit amet vultatup nonumy</li>
-								<li>Duista sed diam</li>
-							  </ol>
-							  <div class="clear"></div>
-							</div>
-							<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-						</div>
-					</div>
+					<el-container id="app">
+						<el-header>
+							<el-carousel :interval="4000" arrow="always" height="450px">
+							  <el-carousel-item v-for="item in imgList" :key="item">
+								<img :src="item.imgUrl" class="pit"></img>
+							  </el-carousel-item>
+							</el-carousel>
+						</el-header>
+					  <el-container class="another">
+						 <el-aside>
+						   
+								<img :src="selfpic" class="selfpic"></img>
+					
+						 </el-aside>
+						 <el-main>
+							<el-row>
+								<p class="name">林良杰</p>
+								<p>
+					<el-tag type="warning">23岁</el-tag>
+								<el-tag>幽默</el-tag>
+					<el-tag type="success">腼腆</el-tag>
+					<el-tag type="info">吃货</el-tag>
+					</p>
+								<p class="ziti">本科就读于浙江科技学院软件工程专业，现就读于浙江大学工业设计专业</p>
+								</el-row>
+								<el-row>
+									<p class="bottom1">email:514515280@qq.com</p>
+								</el-row>
+						 </el-main>
+						</el-container>
+					</el-container>
 				</article>
 				<div class="zerogrid">
 					<div class="comments-are">
@@ -303,6 +307,23 @@
 	
 	
 	<!-- ========== Scripts ========== -->
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<!-- import JavaScript -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script>
+		  new Vue({
+			el: '#app',
+			data: function() {
+			  return { 
+				  imgList:[       
+				  {imgUrl:'images/lin1.jpg'},{imgUrl:'images/lin4.jpg'},{imgUrl:'images/lin3.jpg'},{imgUrl:'images/lin2.jpg'}
+				  ],
+				  selfpic:'images/lin.jpeg'
+			  
+			  }
+			}
+		  })
+		</script>
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/menu.js"></script>
 	<script src="js/jquery.localScroll.min.js"></script>
