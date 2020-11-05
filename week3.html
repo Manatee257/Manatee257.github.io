@@ -148,13 +148,36 @@
 							</div>
 							<h1 style="padding-top: 4%;">原理</h1>
 							<div class="clear"></div>
+							<p style="font-size: 16px; font-weight: 600;padding-top: 2%;padding-bottom: 1%;"># 连线图/结构图</p>
+							<img src="images/arduino_flower.jpg">
+							<p style="font-size: 16px; font-weight: 600;padding-top: 2%;padding-bottom: 1%;"># arduino代码</p>
+							<pre>
+								#include <Servo.h>
+								Servo servo1; 
+								
+								int i = 0;
+								void setup() {
+								  servo1.attach(6);
+								
+								
+								}
+								void loop() {
+								  for (i = -40; i < 140; i++) { 
+									servo1.write(i);                            
+									delay(10);                      
+								  }
+								  for (i = 140; i > -40; i--) {               
+									servo1.write(i);            
+									delay(10);                      
+								  }
+								}</pre>
 							<p style="font-size: 16px; font-weight: 600;padding-top: 2%;padding-bottom: 1%;"># 机械设计</p>
 							<p style="text-indent:2em;">
 								在课堂上学会了舵机的使用后，结合我们的概念（遇到光照就会开花）进行设计动力传导。舵机的上下转动，带动铁丝上下运动，随即控制花瓣开合。
 							</p>
 							<div style="position:relative; padding-bottom:56.25%;">
-								<video class="video-js vjs-theme-forest" data-setup='{"controls": true, "autoplay": false, "preload": "auto"}' style="position: absolute; width: 100%; height: 100%;" >
-									<source src="videos/princeple.MOV" type="video/mp4">
+								<video class="video-js vjs-theme-forest" data-setup='{"controls": true, "autoplay": false, "preload": "auto"}' style="position: absolute; width: 100%; height: 100%;transform:rotate(90reg);" >
+									<source src="videos/princeple.mp4" type="video/mp4">
 								</video>
 							</div>
 							<p>  </p>
@@ -166,7 +189,7 @@
 							</p>
 							<div style="position:relative; padding-bottom:56.25%;">
 								<video class="video-js vjs-theme-forest" data-setup='{"controls": true, "autoplay": false, "preload": "auto"}' style="position: absolute; width: 100%; height: 100%;" >
-									<source src="videos/start.MOV" type="video/mp4">
+									<source src="videos/start.mp4" type="video/mp4">
 								</video>
 							</div>
 							</div>
